@@ -13,6 +13,11 @@
             Points.Add(point);
         }
 
+        public void NegativePoint(int point)
+        {
+            Points.Add(-point);
+        }
+
         public int Sum()
         {
             return Points.Sum();
