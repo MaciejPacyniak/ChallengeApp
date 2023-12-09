@@ -18,12 +18,26 @@ while (true)
     }
     else if (input == "A" || input == "B" || input == "C" || input == "D" || input == "E")
     {
-        employee.AddGrade(input);
+        try
+        {
+            employee.AddGrade(input);
+        }
+        catch (Exception)
+        {
+            Console.WriteLine("Exception catched");
+        }
     }
     else
     {
         employee.AddGrade(input);
     }
+}
+
+try
+{
+}
+catch
+{
 }
 var statistics = employee.GetStatistics();
 Console.WriteLine("=====================");

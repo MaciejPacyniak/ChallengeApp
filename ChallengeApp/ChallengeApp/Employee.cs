@@ -1,23 +1,17 @@
 ﻿// Ignore Spelling: App
 
+using System.Xml.Linq;
+
 namespace ChallengeApp
 {
-    public class Employee
+    public class Employee : Person
     {
         public List<float> grades = new List<float>();
 
-        public Employee()
+        public Employee(string name, string surname, string age, string sex)
+            : base(name, surname, age, sex)
         {
         }
-
-        public Employee(string name, string surname)
-        {
-            this.Name = name;
-            this.Surname = surname;
-        }
-
-        public string Name { get; private set; }
-        public string Surname { get; private set; }
 
         public void AddGrade(float grade)
         {
@@ -27,7 +21,8 @@ namespace ChallengeApp
             }
             else
             {
-                Console.WriteLine("Invalid grade value");
+                throw new Exception("Invalid grade value");
+                //Console.WriteLine("Invalid grade value");
             }
         }
 
@@ -39,7 +34,8 @@ namespace ChallengeApp
             }
             else
             {
-                Console.WriteLine("Invalid value");
+                throw new Exception("Invalid grade value");
+                //Console.WriteLine("Invalid value");
             }
         }
 
@@ -73,8 +69,7 @@ namespace ChallengeApp
                     break;
 
                 default:
-                    Console.WriteLine("Invalid letter");
-                    break;
+                    throw new Exception("Invalid letter");
             }
         }
 
